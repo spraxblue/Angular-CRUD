@@ -1,0 +1,51 @@
+<nav class="navbar navbar-dark navbar-expand-md bg-dark">
+    <div class="container">
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navCollapse"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navCollapse">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="view" class="nav-link">View</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="create" class="nav-link">Create</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="signup" class="nav-link">Signup</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Dropdown
+                        </a>
+                    <div class="dropdown-menu mt-2">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="jumbotron">
+    <p>
+        <input type="checkbox" [(ngModel)]="show"> Show / Hide</p>
+    <h1 class="display-4" appHighlighter="black" cColor="white" *appMyNgIf="show">Hello, world!</h1>
+    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+    <hr class="my-4">
+    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    </p>
+</div>
+
+<br><br>
+<app-one></app-one>
+<app-two></app-two>
+<router-outlet></router-outlet>
+
+<br><br><br><br><br><br><br><br>

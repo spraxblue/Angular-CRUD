@@ -1,0 +1,121 @@
+<div class="container">
+    <form class="form-horizontal" #registrationForm="ngForm" (ngSubmit)="onsubmit(registrationForm)">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <h2>Register New User</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 field-label-responsive">
+                <label for="Username">Username</label>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
+                        <input type="text" name="Username" class="form-control" id="Username" placeholder="Neo" required #Username="ngModel" [(ngModel)]="user.Username" [class.is-invalid]="Username.invalid && Username.touched" [class.is-valid]="Username.valid">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-control-feedback">
+                    <span class="text-danger align-middle" *ngIf="Username.invalid && Username.touched">
+                      <i class="fa fa-close">UserName is Required</i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 field-label-responsive">
+                <label for="email">E-Mail Address</label>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
+                        <input type="text" name="Email" class="form-control" id="email" placeholder="you@example.com" email required #Email="ngModel" [(ngModel)]="user.Email" [class.is-invalid]="Email.invalid && Email.touched" [class.is-valid]="Email.valid">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-control-feedback">
+                    <span class="text-danger align-middle" *ngIf="Email.errors?.required && Email.touched"><i class="fa fa-close">Email is Required</i></span>
+                    <span class="text-danger align-middle" *ngIf="Email.errors?.email && Email.touched"><i class="fa fa-close">Enter Valid Email</i></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 field-label-responsive">
+                <label for="password">Password</label>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group has-danger">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
+                        <input type="password" name="Password" class="form-control" id="password" placeholder="Password" required #Password="ngModel" [(ngModel)]="user.Password" [class.is-invalid]="Password.invalid && Password.touched" [class.is-valid]="Password.valid">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-control-feedback">
+                    <span class="text-danger align-middle" *ngIf="Password.invalid && Password.touched">
+                      <i class="fa fa-close">Password is Required</i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 field-label-responsive">
+                <label for="FirstName">First Name</label>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
+                        <input type="text" name="FirstName" class="form-control" id="FirstName" placeholder="Jhon" required #FirstName="ngModel" [(ngModel)]="user.FirstName" [class.is-invalid]="FirstName.invalid && FirstName.touched" [class.is-valid]="FirstName.valid">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-control-feedback">
+                    <span class="text-danger align-middle" *ngIf="FirstName.invalid && FirstName.touched">
+                      <i class="fa fa-close">First Name is Required</i>
+                </span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 field-label-responsive">
+                <label for="LastName">Last Name</label>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
+                        <input type="text" name="LastName" class="form-control" id="LastName" placeholder="Deo" required #LastName="ngModel" [(ngModel)]="user.LastName" [class.is-invalid]="LastName.invalid && LastName.touched" [class.is-valid]="LastName.valid">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-control-feedback">
+                    <span class="text-danger align-middle" *ngIf="LastName.invalid && LastName.touched">
+                      <i class="fa fa-close">Last Name is Required</i>
+              </span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <button type="submit" [disabled]="registrationForm.invalid" class="btn btn-success">Register</button>
+            </div>
+        </div>
+    </form>
+</div>
+<br><br><br><br> Angular Generated Form Model: {{registrationForm.value | json}}
+
+<br><br><br><br> Model Generated Form Model: {{registrationForm.value | json}}
+<br><br><br><br>

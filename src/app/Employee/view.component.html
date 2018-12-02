@@ -1,0 +1,35 @@
+<!-- <div class="container">
+    <div class="card d-inline-block m-auto" *ngFor="let employee of employees">
+        <img src="../../assets/img/avatar1.png" alt="Employee" class="img-fluid" style="width:100%">
+        <div class="card-body">
+            <h1>Sarah</h1>
+            <p class="title">CEO & Founder, Example</p>
+            <p>Harvard University</p>
+            <a href="#"><i class="fa fa-dribbble"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+        </div>
+        <button class="btn btn-block btn">Contact</button>
+    </div>
+</div>
+<br><br> -->
+<div class="container">
+    <div class="card d-inline-block ml-3" *ngFor="let employee of employees">
+        <img [src]="employee.photoPath" alt="Employee" class="img-fluid image" style="width:100%">
+        <div class="card-body">
+            <h1 class="mb-2">{{employee.name}}</h1>
+            <p class="title mb-1">{{employee.designation}}</p>
+            <p class="mb-1">{{employee.email}}</p>
+            <p class="mb-1">Conatct Preference : {{employee.contactPreference}}</p>
+            <div class="description text-left pt-3">
+                <a href="javascript::" (click)="social_media_links('d')" class="pr-2"><i class="fa fa-dribbble"></i></a>
+                <a href="javascript::" (click)="social_media_links('t')" class="pr-2"><i class="fa fa-twitter"></i></a>
+                <a href="javascript::" (click)="social_media_links('l')" class="pr-2"><i class="fa fa-linkedin"></i></a>
+                <a href="javascript::" (click)="social_media_links('f')" class="pr-2"><i class="fa fa-facebook"></i></a>
+            </div>
+        </div>
+        <button class="btn btn-block btn">{{employee.phoneNumber}}</button>
+    </div>
+</div>
+<br><br>
